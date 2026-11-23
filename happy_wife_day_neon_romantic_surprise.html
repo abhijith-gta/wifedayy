@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Wife Day 💖 | My Dear Kunji Penneee</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter (primary UI font) + Dancing Script (subtle romantic accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            script: ['Dancing Script', 'cursive'],
+          },
+          colors: {
+            cosmic: {
+              950: '#050210',
+              900: '#0b0520',
+              800: '#13072b',
+            },
+            neonPink: '#ff2a85',
+            neonMagenta: '#e11d98',
+            neonCyan: '#00f2ff',
+            neonPurple: '#a855f7',
+            neonGold: '#ffd166',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* =====================================================================
+       CYBERPUNK / COSMIC NEON THEME BASE & RESET
+       ===================================================================== */
+    :root {
+      --neon-pink: #ff2a85;
+      --neon-magenta: #e11d98;
+      --neon-cyan: #00f2ff;
+      --neon-purple: #a855f7;
+      --neon-gold: #ffd166;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      color: #f8f5ff;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(168, 85, 247, 0.24) 0%, transparent 44%),
+        radial-gradient(circle at 86% 26%, rgba(255, 42, 133, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 50% 88%, rgba(0, 242, 255, 0.15) 0%, transparent 50%),
+        linear-gradient(160deg, #050210 0%, #0b0520 50%, #13072b 100%);
+      overflow-x: hidden;
+    }
+
+    /* Fullscreen Cosmic Background & Interactive FX Canvases */
+    #bg-canvas,
+    #fx-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    #bg-canvas { z-index: 0; }
+    #fx-canvas { z-index: 60; }
+
+    /* =====================================================================
+       FROSTED GLASSMORPHISM & NEON GLOW UTILITIES
+       ===================================================================== */
+    .glass-neon {
+      background: linear-gradient(145deg, rgba(25, 12, 54, 0.64), rgba(10, 5, 28, 0.78));
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.58),
+        inset 0 1px 1px rgba(255, 255, 255, 0.16),
+        0 0 30px rgba(168, 85, 247, 0.2);
+    }
+
+    .glass-pink {
+      border: 1px solid rgba(255, 42, 133, 0.45);
+      box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.58),
+        inset 0 1px 1px rgba(255, 255, 255, 0.18),
+        0 0 34px rgba(255, 42, 133, 0.24);
+    }
+
+    .neon-text-pink {
+      text-shadow:
+        0 0 10px rgba(255, 42, 133, 0.88),
+        0 0 24px rgba(255, 42, 133, 0.55),
+        0 0 42px rgba(168, 85, 247, 0.45);
+    }
+
+    .neon-text-cyan {
+      text-shadow:
+        0 0 10px rgba(0, 242, 255, 0.88),
+        0 0 24px rgba(0, 242, 255, 0.52),
+        0 0 42px rgba(168, 85, 247, 0.35);
+    }
+
+    .neon-text-gold {
+      text-shadow:
+        0 0 10px rgba(255, 209, 102, 0.85),
+        0 0 24px rgba(255, 42, 133, 0.5);
+    }
+
+    /* Animated Shimmer Gradient Text */
+    .shimmer-title {
+      background: linear-gradient(90deg, #ff2a85, #ffd166, #00f2ff, #c084fc, #ff2a85);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: gradientShimmer 5s linear infinite;
+      filter: drop-shadow(0 0 14px rgba(255, 42, 133, 0.55));
+    }
+
+    @keyframes gradientShimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 300% center; }
+    }
+
+    /* =====================================================================
+       ROTATING GRADIENT NEON PHOTO FRAMES
+       ===================================================================== */
+    .neon-frame-wrapper {
+      position: relative;
+      padding: 4px;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow:
+        0 0 32px rgba(255, 42, 133, 0.45),
+        0 0 68px rgba(0, 242, 255, 0.24),
+        0 20px 55px rgba(0, 0, 0, 0.72);
+    }
+
+    .neon-frame-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -70%;
+      background: conic-gradient(
+        from 0deg,
+        #ff2a85,
+        #a855f7,
+        #00f2ff,
+        #ffd166,
+        #ff2a85
+      );
+      animation: spinBorder 5.5s linear infinite;
+      z-index: 0;
+    }
+
+    .neon-frame-inner {
+      position: relative;
+      z-index: 1;
+      border-radius: calc(1.5rem - 3px);
+      background: #090318;
+      overflow: hidden;
+    }
+
+    @keyframes spinBorder {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Radiant Couple Finale Photo Frame */
+    .couple-glow-frame {
+      position: relative;
+      padding: 5px;
+      border-radius: 1.75rem;
+      overflow: hidden;
+      box-shadow:
+        0 0 40px rgba(255, 42, 133, 0.68),
+        0 0 82px rgba(168, 85, 247, 0.48),
+        0 0 115px rgba(0, 242, 255, 0.28);
+    }
+
+    .couple-glow-frame::before {
+      content: '';
+      position: absolute;
+      inset: -70%;
+      background: conic-gradient(
+        from 90deg,
+        #ff2a85,
+        #ffd166,
+        #ff2a85,
+        #00f2ff,
+        #a855f7,
+        #ff2a85
+      );
+      animation: spinBorder 3.8s linear infinite;
+      z-index: 0;
+    }
+
+    /* =====================================================================
+       SECTION 1: ANIMATED OPENING CURTAIN (PARTING & FADING EFFECT)
+       ===================================================================== */
+    #opening-curtain {
+      transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .curtain-panel {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 51%;
+      background: linear-gradient(160deg, rgba(6, 3, 18, 0.96), rgba(17, 7, 38, 0.96));
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.95s cubic-bezier(0.77, 0, 0.175, 1);
+      z-index: 0;
+    }
+
+    .curtain-left {
+      left: 0;
+      border-right: 1px solid rgba(255, 42, 133, 0.35);
+      box-shadow: inset -12px 0 32px rgba(255, 42, 133, 0.12);
+    }
+
+    .curtain-right {
+      right: 0;
+      border-left: 1px solid rgba(0, 242, 255, 0.35);
+      box-shadow: inset 12px 0 32px rgba(0, 242, 255, 0.12);
+    }
+
+    #opening-curtain.curtain-opening .curtain-left {
+      transform: translateX(-105%);
+    }
+
+    #opening-curtain.curtain-opening .curtain-right {
+      transform: translateX(105%);
+    }
+
+    #opening-curtain.curtain-opening .curtain-content {
+      opacity: 0;
+      transform: scale(1.08);
+    }
+
+    .curtain-content {
+      transition: opacity 0.6s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .heart-pulse {
+      animation: heartBeat 1.8s ease-in-out infinite;
+      filter: drop-shadow(0 0 18px rgba(255, 42, 133, 0.9)) drop-shadow(0 0 38px rgba(0, 242, 255, 0.45));
+    }
+
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.13); }
+      30% { transform: scale(1.02); }
+      45% { transform: scale(1.1); }
+      65% { transform: scale(1); }
+    }
+
+    .ring-pulse {
+      animation: pulseOut 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+
+    @keyframes pulseOut {
+      0% { transform: scale(0.8); opacity: 0.85; }
+      100% { transform: scale(1.78); opacity: 0; }
+    }
+
+    /* Glowing Neon Primary Button with Sweep Sheen */
+    .btn-neon-primary {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ff2a85 0%, #c026d3 52%, #7c3aed 100%);
+      box-shadow:
+        0 0 24px rgba(255, 42, 133, 0.68),
+        0 0 48px rgba(168, 85, 247, 0.38),
+        inset 0 1px 1px rgba(255, 255, 255, 0.38);
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+    }
+
+    .btn-neon-primary:hover {
+      box-shadow:
+        0 0 32px rgba(255, 42, 133, 0.9),
+        0 0 64px rgba(0, 242, 255, 0.42),
+        inset 0 1px 2px rgba(255, 255, 255, 0.55);
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    .btn-neon-primary::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 45%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.38), transparent);
+      transform: rotate(25deg);
+      animation: sheenSweep 3.2s ease-in-out infinite;
+    }
+
+    @keyframes sheenSweep {
+      0%, 55% { left: -60%; }
+      100% { left: 145%; }
+    }
+
+    /* =====================================================================
+       SECTION 3: 3D-STYLED INTERACTIVE NEON GIFT BOXES
+       ===================================================================== */
+    .gift-stage {
+      perspective: 900px;
+      cursor: pointer;
+    }
+
+    .gift-box-3d {
+      position: relative;
+      width: 132px;
+      height: 122px;
+      margin: 0 auto;
+      transform-style: preserve-3d;
+      animation: giftWiggle 2.5s ease-in-out infinite;
+      transition: transform 0.35s ease;
+    }
+
+    .gift-stage:hover .gift-box-3d {
+      animation: none;
+      transform: scale(1.08) translateY(-6px);
+    }
+
+    @keyframes giftWiggle {
+      0%, 58%, 100% { transform: rotate(0deg) translateY(0); }
+      66% { transform: rotate(-5deg) translateY(-6px) scale(1.03); }
+      74% { transform: rotate(5deg) translateY(-9px) scale(1.05); }
+      82% { transform: rotate(-3.5deg) translateY(-5px) scale(1.02); }
+      90% { transform: rotate(2deg) translateY(-2px); }
+    }
+
+    .gift-body {
+      position: absolute;
+      bottom: 0;
+      left: 11px;
+      width: 110px;
+      height: 84px;
+      border-radius: 12px;
+      transition: transform 0.5s ease, opacity 0.45s ease;
+    }
+
+    .gift-body-pink {
+      background: linear-gradient(145deg, #ff2a85, #9d174d);
+      box-shadow:
+        0 14px 30px rgba(255, 42, 133, 0.48),
+        inset 0 2px 6px rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(255, 165, 210, 0.55);
+    }
+
+    .gift-body-cyan {
+      background: linear-gradient(145deg, #00d4ff, #4c1d95);
+      box-shadow:
+        0 14px 30px rgba(0, 242, 255, 0.46),
+        inset 0 2px 6px rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(160, 245, 255, 0.55);
+    }
+
+    .gift-ribbon-v {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 20px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, #ffd166, #ff9f1c, #ffd166);
+      box-shadow: 0 0 12px rgba(255, 209, 102, 0.72);
+    }
+
+    .gift-ribbon-h {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 16px;
+      transform: translateY(-50%);
+      background: linear-gradient(90deg, #ffd166, #fff3b0, #ffd166);
+      box-shadow: 0 0 10px rgba(255, 209, 102, 0.52);
+    }
+
+    .gift-lid {
+      position: absolute;
+      top: 12px;
+      left: 4px;
+      width: 124px;
+      height: 30px;
+      border-radius: 10px;
+      z-index: 2;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.55s ease;
+    }
+
+    .gift-lid-pink {
+      background: linear-gradient(145deg, #ff54a4, #be185d);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.42), inset 0 2px 5px rgba(255, 255, 255, 0.42);
+      border: 1px solid rgba(255, 195, 224, 0.55);
+    }
+
+    .gift-lid-cyan {
+      background: linear-gradient(145deg, #38bdf8, #6d28d9);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.42), inset 0 2px 5px rgba(255, 255, 255, 0.42);
+      border: 1px solid rgba(186, 248, 255, 0.55);
+    }
+
+    .gift-bow {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 56px;
+      height: 24px;
+    }
+
+    .gift-bow::before,
+    .gift-bow::after {
+      content: '';
+      position: absolute;
+      width: 26px;
+      height: 22px;
+      border: 4px solid #ffd166;
+      border-radius: 50% 50% 0 50%;
+      box-shadow: 0 0 14px rgba(255, 209, 102, 0.88);
+    }
+
+    .gift-bow::before {
+      left: 2px;
+      transform: rotate(-18deg);
+    }
+
+    .gift-bow::after {
+      right: 2px;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(18deg);
+    }
+
+    .gift-opened .gift-lid {
+      transform: translateY(-72px) rotate(-26deg) scale(0.9);
+      opacity: 0;
+    }
+
+    .gift-opened .gift-body {
+      transform: scale(0.84) translateY(14px);
+      opacity: 0;
+    }
+
+    .reveal-pop {
+      animation: popInReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes popInReveal {
+      0% { opacity: 0; transform: scale(0.75) translateY(22px); }
+      70% { opacity: 1; transform: scale(1.03) translateY(-3px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* =====================================================================
+       SECTION 4: PROPOSAL ARENA, ORBIT TRACK & CUTE SHAKE
+       ===================================================================== */
+    .shake-cute {
+      animation: cuteShake 0.48s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    @keyframes cuteShake {
+      0%, 100% { transform: translateX(0) rotate(0deg); }
+      20% { transform: translateX(-7px) rotate(-2deg); }
+      40% { transform: translateX(7px) rotate(2deg); }
+      60% { transform: translateX(-5px) rotate(-1.2deg); }
+      80% { transform: translateX(4px) rotate(1deg); }
+    }
+
+    .floating-emoji {
+      position: fixed;
+      pointer-events: none;
+      z-index: 70;
+      font-size: 1.75rem;
+      user-select: none;
+      animation: emojiRise 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes emojiRise {
+      0% { opacity: 0; transform: translate(-50%, 0) scale(0.5) rotate(0deg); }
+      20% { opacity: 1; transform: translate(-50%, -22px) scale(1.15) rotate(-8deg); }
+      100% { opacity: 0; transform: translate(calc(-50% + var(--drift, 0px)), -120px) scale(0.85) rotate(16deg); }
+    }
+
+    #orbit-ring {
+      position: absolute;
+      border-radius: 9999px;
+      border: 1.5px dashed rgba(0, 242, 255, 0.32);
+      box-shadow: 0 0 22px rgba(0, 242, 255, 0.12), inset 0 0 20px rgba(255, 42, 133, 0.08);
+      pointer-events: none;
+      transition: opacity 0.45s ease;
+    }
+
+    /* Floating Sparkles Around Couple Photo */
+    .sparkle-dot {
+      position: absolute;
+      pointer-events: none;
+      animation: twinkleSparkle 2.4s ease-in-out infinite;
+    }
+
+    @keyframes twinkleSparkle {
+      0%, 100% { opacity: 0.35; transform: scale(0.75) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1.25) rotate(20deg); }
+    }
+
+    /* Love Level Meter Neon Gradient Bar */
+    .love-bar-fill {
+      background: linear-gradient(90deg, #ff2a85, #a855f7, #00f2ff, #ffd166, #ff2a85);
+      background-size: 240% 100%;
+      animation: gradientShimmer 2.8s linear infinite;
+      box-shadow: 0 0 18px rgba(255, 42, 133, 0.78), 0 0 30px rgba(0, 242, 255, 0.42);
+      transition: width 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Entrance Animation for Main Content Sections */
+    .fade-up-enter {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .fade-up-enter.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="selection:bg-neonPink/40 selection:text-white">
+
+  <!-- Animated Cosmic Background Canvas (Twinkling Stars & Floating Neon Hearts) -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Interactive Particle Burst, Confetti & Fireworks Canvas -->
+  <canvas id="fx-canvas"></canvas>
+
+  <!-- Audio Mute / Unmute Floating Toggle -->
+  <button
+    id="audio-toggle-btn"
+    type="button"
+    aria-label="Toggle Sound Effects"
+    title="Toggle Sound Effects"
+    class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full glass-neon flex items-center justify-center text-white hover:scale-110 active:scale-95 transition-transform border border-neonCyan/45 shadow-[0_0_20px_rgba(0,242,255,0.3)]"
+  >
+    <svg id="icon-sound-on" class="w-5 h-5 text-neonCyan" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.54 8.46a5 5 0 010 7.07" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.07 4.93a10 10 0 010 14.14" />
+    </svg>
+    <svg id="icon-sound-off" class="w-5 h-5 text-pink-400 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M23 9l-6 6M17 9l6 6" />
+    </svg>
+  </button>
+
+  <!-- =======================================================================
+       SECTION 1: ANIMATED NEON OPENING CURTAIN
+       ======================================================================= -->
+  <section
+    id="opening-curtain"
+    class="fixed inset-0 z-40 flex flex-col items-center justify-center px-6 text-center overflow-hidden"
+  >
+    <!-- Parting Left & Right Neon Curtain Panels -->
+    <div class="curtain-panel curtain-left"></div>
+    <div class="curtain-panel curtain-right"></div>
+
+    <!-- Centered Neon Emblem & Trigger -->
+    <div class="curtain-content relative z-10 flex flex-col items-center max-w-xl w-full">
+      <div class="relative mb-8 flex items-center justify-center">
+        <div class="absolute w-32 h-32 rounded-full border-2 border-neonPink/60 ring-pulse"></div>
+        <div class="absolute w-32 h-32 rounded-full border-2 border-neonCyan/55 ring-pulse" style="animation-delay: 1.2s;"></div>
+
+        <!-- Glowing Pulsing Neon Heart Emblem -->
+        <div class="relative z-10 w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center heart-pulse">
+          <svg viewBox="0 0 120 120" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="neonHeartGrad" x1="15" y1="15" x2="105" y2="105" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ff2a85" />
+                <stop offset="50%" stop-color="#c084fc" />
+                <stop offset="100%" stop-color="#00f2ff" />
+              </linearGradient>
+              <filter id="heartGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path
+              d="M60 102C60 102 15 74.5 15 41.5C15 26.5 26.8 15 41 15C50.2 15 56.8 20.1 60 26.3C63.2 20.1 69.8 15 79 15C93.2 15 105 26.5 105 41.5C105 74.5 60 102 60 102Z"
+              fill="rgba(255, 42, 133, 0.24)"
+              stroke="url(#neonHeartGrad)"
+              stroke-width="4.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              filter="url(#heartGlow)"
+            />
+            <path
+              d="M60 88C60 88 28 67 28 43C28 33.5 35.2 26.5 44 26.5C50.2 26.5 55.8 30.2 60 35.8C64.2 30.2 69.8 26.5 76 26.5C84.8 26.5 92 33.5 92 43C92 67 60 88 60 88Z"
+              stroke="#ffd166"
+              stroke-opacity="0.72"
+              stroke-width="1.8"
+              stroke-dasharray="4 5"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase text-neonCyan bg-neonCyan/10 border border-neonCyan/35 mb-4 shadow-[0_0_18px_rgba(0,242,255,0.22)]">
+        ✨ Happy Wife Day Edition ✨
+      </span>
+
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight shimmer-title mb-4 leading-tight">
+        A Special Surprise For You
+      </h1>
+
+      <p class="text-base sm:text-xl text-purple-100/90 font-medium mb-10 max-w-md neon-text-pink">
+        A Glowing Little Neon World Made Just For My Kunji Penneee 💖
+      </p>
+
+      <button
+        id="open-surprise-btn"
+        type="button"
+        class="btn-neon-primary px-8 sm:px-10 py-4 rounded-full text-base sm:text-lg font-bold text-white tracking-wide cursor-pointer active:scale-95"
+      >
+        Open Your Surprise ✨
+      </button>
+
+      <p class="mt-6 text-xs text-purple-300/65 tracking-wide">
+        Tip: Tap anywhere for neon heart sparkles 💫
+      </p>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       MAIN CELEBRATION CONTENT (SECTIONS 2, 3 & 4)
+       ======================================================================= -->
+  <main id="main-experience" class="relative z-10 hidden opacity-0 transition-opacity duration-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-12 pb-24 sm:pt-16 sm:pb-28 space-y-16 sm:space-y-24">
+
+      <!-- ===================================================================
+           SECTION 2: HERO & RECTANGULAR NEON PHOTO FRAME (IMAGE 1 - her.jpeg)
+           =================================================================== -->
+      <section class="fade-up-enter text-center flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-neonGold bg-neonGold/10 border border-neonGold/35 mb-4 shadow-[0_0_16px_rgba(255,209,102,0.24)]">
+          👑 To The Queen Of My Heart
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-black tracking-tight shimmer-title mb-3 leading-tight">
+          Happy Wife Day 💖
+        </h1>
+
+        <p class="text-sm sm:text-base text-purple-200/85 max-w-lg mb-8">
+          Lighting up the cosmic night sky just to celebrate how endlessly bright you make my life.
+        </p>
+
+        <!-- Rectangular Glowing Neon Photo Frame -->
+        <div class="w-full max-w-2xl mx-auto">
+          <div class="neon-frame-wrapper">
+            <div class="neon-frame-inner relative w-full aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center bg-[#090318]">
+              <!-- Ambient blurred photo backdrop so any orientation fills the rectangle luxuriously -->
+              <img
+                id="hero-wife-bg"
+                src="her.jpeg"
+                alt=""
+                aria-hidden="true"
+                class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-45 scale-110 pointer-events-none select-none"
+                onerror="this.style.display='none'"
+              />
+              <!-- Main sharp rectangular photo -->
+              <img
+                id="hero-wife-photo"
+                src="her.jpeg"
+                alt="My Dear Kunji Penne"
+                class="relative z-10 w-full h-full object-contain rounded-xl drop-shadow-[0_0_24px_rgba(0,0,0,0.68)]"
+                onerror="this.style.display='none'; document.getElementById('hero-wife-bg').style.display='none'; var fb=document.getElementById('hero-wife-fallback'); fb.classList.remove('hidden'); fb.classList.add('flex');"
+              />
+              <!-- Graceful Neon Glass Fallback (Shown if her.jpeg isn't in the same folder yet) -->
+              <div
+                id="hero-wife-fallback"
+                class="hidden relative z-30 w-full h-full flex-col items-center justify-center text-center p-6 sm:p-8 bg-gradient-to-br from-[#190836]/92 via-[#0f0524]/92 to-[#210930]/92 backdrop-blur-md"
+              >
+                <div class="w-16 h-16 rounded-full bg-neonPink/20 border border-neonPink/55 flex items-center justify-center text-3xl mb-3 shadow-[0_0_26px_rgba(255,42,133,0.5)] heart-pulse">
+                  💖
+                </div>
+                <p class="text-base sm:text-lg font-bold text-white neon-text-pink mb-1.5">
+                  My Dear Kunji Penne ✨
+                </p>
+                <p class="text-xs sm:text-sm text-purple-200/85 max-w-sm leading-relaxed">
+                  Place <code class="px-2 py-0.5 rounded-md bg-neonCyan/15 border border-neonCyan/40 text-neonCyan font-semibold">her.jpeg</code> in the same folder as this HTML file
+                </p>
+              </div>
+              <!-- Glossy subtle neon sheen -->
+              <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-tr from-neonPink/10 via-transparent to-neonCyan/10"></div>
+            </div>
+          </div>
+
+          <!-- Sweet Neon Badge -->
+          <div class="mt-6 flex justify-center">
+            <div class="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full glass-neon glass-pink text-sm sm:text-base font-bold text-white tracking-wide shadow-[0_0_24px_rgba(255,42,133,0.4)]">
+              <span class="w-2.5 h-2.5 rounded-full bg-neonPink animate-ping"></span>
+              <span class="neon-text-pink">My Favorite Person ✨</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 3: TWO INTERACTIVE 3D-STYLED NEON GIFT BOXES
+           =================================================================== -->
+      <section class="fade-up-enter">
+        <div class="text-center mb-10">
+          <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-widest text-neonCyan bg-neonCyan/10 border border-neonCyan/35 mb-3">
+            🎁 Unwrap Your Surprises
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white neon-text-cyan">
+            Two Little Gifts For You ✨
+          </h2>
+          <p class="text-sm sm:text-base text-purple-200/80 mt-2">
+            Tap each glowing neon gift box below to reveal what’s waiting inside!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <!-- GIFT BOX 1: LUXURY ASSORTED CHOCOLATE SURPRISE -->
+          <div
+            id="gift-card-1"
+            class="glass-neon rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center min-h-[345px] relative overflow-hidden border border-neonPink/40 hover:border-neonPink/75 transition-colors"
+          >
+            <div class="absolute -top-12 -right-12 w-36 h-36 rounded-full bg-neonPink/20 blur-3xl pointer-events-none"></div>
+
+            <!-- Closed 3D Gift Box Stage -->
+            <div
+              id="gift-closed-1"
+              role="button"
+              tabindex="0"
+              aria-label="Open Sweet Treat Gift Box"
+              class="gift-stage flex flex-col items-center justify-center w-full py-4 focus:outline-none"
+            >
+              <div class="gift-box-3d mb-6">
+                <div class="gift-lid gift-lid-pink">
+                  <div class="gift-bow"></div>
+                  <div class="gift-ribbon-v"></div>
+                </div>
+                <div class="gift-body gift-body-pink">
+                  <div class="gift-ribbon-v"></div>
+                  <div class="gift-ribbon-h"></div>
+                </div>
+              </div>
+
+              <span class="text-lg sm:text-xl font-bold text-white neon-text-pink mb-1">
+                Sweet Treat #1 🍫
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-neonGold bg-neonGold/10 border border-neonGold/40 animate-pulse mt-2">
+                ✨ Tap to Open!
+              </span>
+            </div>
+
+            <!-- Opened Luxury Assorted Chocolates Reveal -->
+            <div id="gift-reveal-1" class="hidden w-full text-center flex-col items-center">
+              <div class="w-full max-w-[275px] mx-auto mb-4 drop-shadow-[0_0_24px_rgba(255,42,133,0.48)]">
+                <!-- Rich Custom Inline SVG Luxury Chocolate Gift Box -->
+                <svg viewBox="0 0 320 220" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="boxOuter" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#ff2a85" />
+                      <stop offset="55%" stop-color="#9d174d" />
+                      <stop offset="100%" stop-color="#581c87" />
+                    </linearGradient>
+                    <linearGradient id="goldTrim" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#fff3b0" />
+                      <stop offset="50%" stop-color="#ffd166" />
+                      <stop offset="100%" stop-color="#d97706" />
+                    </linearGradient>
+                    <linearGradient id="chocDark" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#6b3a24" />
+                      <stop offset="50%" stop-color="#3f1d0f" />
+                      <stop offset="100%" stop-color="#220d05" />
+                    </linearGradient>
+                    <linearGradient id="chocMilk" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#9c5a34" />
+                      <stop offset="55%" stop-color="#633219" />
+                      <stop offset="100%" stop-color="#3c1b0b" />
+                    </linearGradient>
+                    <linearGradient id="chocPink" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#ff99c8" />
+                      <stop offset="55%" stop-color="#ff4d94" />
+                      <stop offset="100%" stop-color="#be185d" />
+                    </linearGradient>
+                    <linearGradient id="foilWrap" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#ffe58f" />
+                      <stop offset="45%" stop-color="#f59e0b" />
+                      <stop offset="100%" stop-color="#b45309" />
+                    </linearGradient>
+                  </defs>
+
+                  <ellipse cx="160" cy="184" rx="124" ry="20" fill="#ff2a85" opacity="0.28" />
+
+                  <!-- Tilted Luxury Gold-Foil Chocolate Bar -->
+                  <g transform="translate(198, 22) rotate(14)">
+                    <rect x="0" y="0" width="76" height="92" rx="8" fill="url(#chocDark)" stroke="#8b4d2e" stroke-width="2" />
+                    <rect x="7" y="8" width="27" height="22" rx="3" fill="#542914" stroke="#7c4123" stroke-width="1.2" />
+                    <rect x="40" y="8" width="27" height="22" rx="3" fill="#542914" stroke="#7c4123" stroke-width="1.2" />
+                    <rect x="7" y="35" width="27" height="22" rx="3" fill="#542914" stroke="#7c4123" stroke-width="1.2" />
+                    <rect x="40" y="35" width="27" height="22" rx="3" fill="#542914" stroke="#7c4123" stroke-width="1.2" />
+                    <path d="M11 12 L28 12" stroke="#ffffff" stroke-opacity="0.34" stroke-width="2" stroke-linecap="round" />
+                    <path d="M44 12 L61 12" stroke="#ffffff" stroke-opacity="0.34" stroke-width="2" stroke-linecap="round" />
+                    <path d="M-2 52 L78 52 L78 92 C78 96 74 98 70 98 L6 98 C2 98 -2 96 -2 92 Z" fill="url(#foilWrap)" />
+                    <path d="M-2 52 L14 44 L28 53 L44 45 L60 53 L78 46 L78 56 L-2 56 Z" fill="#fef08a" opacity="0.88" />
+                    <text x="38" y="79" text-anchor="middle" fill="#78350f" font-size="9" font-weight="800" font-family="Inter, sans-serif">LOVE CHOC</text>
+                  </g>
+
+                  <!-- Luxury Open Velvet Chocolate Box -->
+                  <rect x="34" y="64" width="222" height="132" rx="18" fill="url(#boxOuter)" stroke="url(#goldTrim)" stroke-width="3.5" />
+                  <rect x="46" y="76" width="198" height="108" rx="12" fill="#2a0a1e" stroke="#ffd166" stroke-opacity="0.45" stroke-width="1.5" />
+
+                  <line x1="112" y1="76" x2="112" y2="184" stroke="#ffd166" stroke-opacity="0.22" stroke-width="1.5" />
+                  <line x1="178" y1="76" x2="178" y2="184" stroke="#ffd166" stroke-opacity="0.22" stroke-width="1.5" />
+                  <line x1="46" y1="130" x2="244" y2="130" stroke="#ffd166" stroke-opacity="0.22" stroke-width="1.5" />
+
+                  <!-- Dark Chocolate Gold Swirl Truffle -->
+                  <g transform="translate(79, 103)">
+                    <circle cx="0" cy="2" r="21" fill="#17060d" opacity="0.6" />
+                    <circle cx="0" cy="0" r="19" fill="url(#chocDark)" stroke="#8b4d2e" stroke-width="1" />
+                    <path d="M-13 -4 Q0 -13 13 -4 M-14 4 Q0 -4 14 4 M-10 11 Q0 5 10 11" stroke="#ffd166" stroke-width="2" fill="none" stroke-linecap="round" />
+                    <ellipse cx="-6" cy="-7" rx="4" ry="2.2" fill="#ffffff" opacity="0.28" transform="rotate(-25 -6 -7)" />
+                  </g>
+
+                  <!-- Strawberry Pink Heart Praline -->
+                  <g transform="translate(145, 103)">
+                    <path d="M0 16 C0 16 -19 4 -19 -6 C-19 -13 -13 -18 -7 -18 C-3 -18 0 -15 0 -12 C0 -15 3 -18 7 -18 C13 -18 19 -13 19 -6 C19 4 0 16 0 16 Z" fill="url(#chocPink)" stroke="#ffe4f2" stroke-width="1.3" />
+                    <path d="M-10 -8 Q-6 -12 -3 -8" stroke="#ffffff" stroke-opacity="0.68" stroke-width="2" fill="none" stroke-linecap="round" />
+                  </g>
+
+                  <!-- Milk Chocolate Gold-Striped Praline -->
+                  <g transform="translate(211, 103)">
+                    <rect x="-18" y="-16" width="36" height="32" rx="9" fill="url(#chocMilk)" stroke="#b46e46" stroke-width="1.2" />
+                    <path d="M-12 -10 L12 10 M-12 0 L8 14 M-4 -12 L13 2" stroke="#fff3b0" stroke-width="1.8" stroke-linecap="round" opacity="0.88" />
+                  </g>
+
+                  <!-- White Chocolate Berry Drizzle -->
+                  <g transform="translate(79, 157)">
+                    <rect x="-18" y="-16" width="36" height="32" rx="9" fill="#fef3c7" stroke="#fde68a" stroke-width="1.2" />
+                    <path d="M-14 -6 Q0 -14 14 -4 M-14 4 Q0 -3 14 6" stroke="#ff2a85" stroke-width="2.2" fill="none" stroke-linecap="round" />
+                    <circle cx="0" cy="0" r="4" fill="#ff2a85" />
+                  </g>
+
+                  <!-- Golden Foil Wrapped Truffle -->
+                  <g transform="translate(145, 157)">
+                    <circle cx="0" cy="0" r="19" fill="url(#foilWrap)" stroke="#fef08a" stroke-width="1.4" />
+                    <path d="M-11 -6 L-4 -12 L3 -5 L11 -10 M-12 6 L-2 1 L6 9 L13 3" stroke="#fffbeb" stroke-opacity="0.65" stroke-width="1.5" fill="none" />
+                    <ellipse cx="0" cy="0" rx="8" ry="5" fill="#ffffff" stroke="#d97706" stroke-width="1" />
+                    <circle cx="0" cy="0" r="2.2" fill="#ff2a85" />
+                  </g>
+
+                  <!-- Dark Chocolate Gold-Rimmed Heart Praline -->
+                  <g transform="translate(211, 157)">
+                    <path d="M0 16 C0 16 -19 4 -19 -6 C-19 -13 -13 -18 -7 -18 C-3 -18 0 -15 0 -12 C0 -15 3 -18 7 -18 C13 -18 19 -13 19 -6 C19 4 0 16 0 16 Z" fill="url(#chocDark)" stroke="#ffd166" stroke-width="1.4" />
+                    <path d="M-9 -7 Q-5 -12 -2 -7" stroke="#ffd166" stroke-opacity="0.72" stroke-width="1.8" fill="none" stroke-linecap="round" />
+                  </g>
+
+                  <!-- Sparkles Around Box -->
+                  <g fill="#ffd166">
+                    <path d="M22 44 L25 52 L33 55 L25 58 L22 66 L19 58 L11 55 L19 52 Z" />
+                    <path d="M286 142 L288.5 149 L295 151.5 L288.5 154 L286 161 L283.5 154 L277 151.5 L283.5 149 Z" fill="#00f2ff" />
+                    <path d="M138 22 L140.5 29 L147 31.5 L140.5 34 L138 41 L135.5 34 L129 31.5 L135.5 29 Z" fill="#ff2a85" />
+                  </g>
+                </svg>
+              </div>
+
+              <p class="text-base sm:text-lg font-bold text-neonGold neon-text-gold leading-snug px-2">
+                Sweetest chocolates for my sweetest Kunji penneee! 🍫💖
+              </p>
+              <span class="mt-2 text-xs text-purple-200/75">
+                Every bite melts just like my heart melts for you ✨
+              </span>
+            </div>
+          </div>
+
+          <!-- GIFT BOX 2: SPECIAL MESSAGE SURPRISE -->
+          <div
+            id="gift-card-2"
+            class="glass-neon rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center min-h-[345px] relative overflow-hidden border border-neonCyan/40 hover:border-neonCyan/75 transition-colors"
+          >
+            <div class="absolute -bottom-12 -left-12 w-36 h-36 rounded-full bg-neonCyan/20 blur-3xl pointer-events-none"></div>
+
+            <!-- Closed 3D Gift Box Stage -->
+            <div
+              id="gift-closed-2"
+              role="button"
+              tabindex="0"
+              aria-label="Open Special Message Gift Box"
+              class="gift-stage flex flex-col items-center justify-center w-full py-4 focus:outline-none"
+            >
+              <div class="gift-box-3d mb-6" style="animation-delay: 0.45s;">
+                <div class="gift-lid gift-lid-cyan">
+                  <div class="gift-bow"></div>
+                  <div class="gift-ribbon-v"></div>
+                </div>
+                <div class="gift-body gift-body-cyan">
+                  <div class="gift-ribbon-v"></div>
+                  <div class="gift-ribbon-h"></div>
+                </div>
+              </div>
+
+              <span class="text-lg sm:text-xl font-bold text-white neon-text-cyan mb-1">
+                Special Message #2 💌
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-neonCyan bg-neonCyan/10 border border-neonCyan/40 animate-pulse mt-2">
+                ✨ Tap to Open!
+              </span>
+            </div>
+
+            <!-- Opened Message Reveal -->
+            <div id="gift-reveal-2" class="hidden w-full text-center flex-col items-center">
+              <div class="w-14 h-14 rounded-full bg-neonPink/20 border border-neonPink/60 flex items-center justify-center text-2xl mb-4 shadow-[0_0_24px_rgba(255,42,133,0.55)] animate-bounce">
+                💌
+              </div>
+
+              <div class="w-full rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-neonPink/18 via-purple-900/40 to-neonCyan/18 border border-neonPink/55 shadow-[0_0_32px_rgba(255,42,133,0.3)] backdrop-blur-md">
+                <!-- EXACT REQUESTED MESSAGE -->
+                <p class="text-xl sm:text-2xl font-extrabold text-white neon-text-pink leading-relaxed">
+                  Happy Wife day my dear Kunji penneee😁😁 
+                </p>
+              </div>
+
+              <p class="mt-4 text-sm text-purple-100/85 leading-relaxed max-w-xs">
+                Wishing us endless laughter, cozy moments, and a lifetime of pure happiness together. You are my whole universe! 💖✨
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 4: INTERACTIVE PROPOSAL ARENA ("Will you be my wife forever?")
+           =================================================================== -->
+      <section class="fade-up-enter">
+        <div class="glass-neon glass-pink rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden">
+          <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-72 h-40 bg-neonPink/20 blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-20 right-10 w-64 h-40 bg-neonCyan/15 blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10 flex flex-col items-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-neonPink/30 to-neonPurple/30 border border-neonPink/60 shadow-[0_0_28px_rgba(255,42,133,0.52)] mb-5 text-3xl heart-pulse">
+              💍
+            </div>
+
+            <h2 class="text-2xl sm:text-4xl font-black text-white shimmer-title mb-3 leading-tight">
+              Will you be my wife forever? 💍💖
+            </h2>
+
+            <p class="text-sm sm:text-base text-purple-200/80 mb-5 max-w-md">
+              Choose carefully, my Kunji penneee… my heart is beating fast! ✨
+            </p>
+
+            <!-- Dynamic Emotional Plea Message Box -->
+            <div class="min-h-[68px] flex items-center justify-center w-full max-w-md mb-4">
+              <div
+                id="no-message-box"
+                class="hidden px-5 py-3 rounded-2xl bg-[#1a0836]/88 border border-neonPink/65 shadow-[0_0_26px_rgba(255,42,133,0.4)] text-base sm:text-lg font-bold text-pink-100 neon-text-pink"
+              ></div>
+            </div>
+
+            <!-- Dedicated Circular Orbit Button Arena -->
+            <div
+              id="proposal-arena"
+              class="relative w-full max-w-lg h-[300px] sm:h-[330px] mx-auto flex items-center justify-center select-none"
+            >
+              <!-- Glowing Circular Orbit Path Ring -->
+              <div id="orbit-ring" class="opacity-0"></div>
+
+              <!-- Glowing "Yes! 💖" Button (Centered, grows bigger & brighter on each No) -->
+              <button
+                id="yes-btn"
+                type="button"
+                class="btn-neon-primary relative z-20 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-lg sm:text-xl font-extrabold text-white tracking-wide cursor-pointer transition-transform duration-300"
+              >
+                Yes! 💖
+              </button>
+
+              <!-- Circular-Orbiting "No 🙈" Button -->
+              <button
+                id="no-btn"
+                type="button"
+                class="absolute z-30 px-6 py-3 rounded-full text-sm sm:text-base font-bold text-purple-100 bg-[#1e1038]/92 border border-neonCyan/55 shadow-[0_0_18px_rgba(0,242,255,0.3)] hover:border-neonPink/75 hover:text-white cursor-pointer whitespace-nowrap"
+              >
+                No 🙈
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =======================================================================
+       SECTION 5: GRAND FIREWORKS CELEBRATION FINALE (IMAGE 2 - us.jpeg)
+       ======================================================================= -->
+  <section
+    id="celebration-finale"
+    class="relative z-20 hidden opacity-0 transition-opacity duration-700 min-h-screen flex items-center justify-center px-4 sm:px-6 py-14 sm:py-20"
+  >
+    <div class="max-w-3xl w-full mx-auto glass-neon glass-pink rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden">
+      <div class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-neonPink/25 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-64 h-64 rounded-full bg-neonCyan/22 blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col items-center">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-widest text-neonGold bg-neonGold/15 border border-neonGold/45 mb-4 shadow-[0_0_20px_rgba(255,209,102,0.32)]">
+          🎆 Best Answer Ever 🎆
+        </span>
+
+        <h2 class="text-3xl sm:text-5xl font-black shimmer-title mb-2 leading-tight">
+          She Said YES! Forever Starts Now 💍✨
+        </h2>
+
+        <p class="text-lg sm:text-2xl font-bold text-white neon-text-pink mb-7">
+          Happy Wife Day, My Kunji Penneee! 🥰❤️
+        </p>
+
+        <!-- Radiant Glowing Neon Couple Photo Frame -->
+        <div class="relative w-full max-w-xl mx-auto mb-8">
+          <span class="sparkle-dot -top-4 -left-3 text-xl sm:text-2xl" style="animation-delay: 0s;">✨</span>
+          <span class="sparkle-dot -top-4 -right-3 text-xl sm:text-2xl" style="animation-delay: 0.7s;">💖</span>
+          <span class="sparkle-dot -bottom-4 -left-2 text-xl sm:text-2xl" style="animation-delay: 1.3s;">💫</span>
+          <span class="sparkle-dot -bottom-4 -right-2 text-xl sm:text-2xl" style="animation-delay: 1.9s;">✨</span>
+
+          <div class="couple-glow-frame">
+            <div class="neon-frame-inner relative w-full aspect-[4/3] sm:aspect-[16/10] flex items-center justify-center bg-[#090318]">
+              <!-- Ambient blurred couple photo backdrop -->
+              <img
+                id="couple-finale-bg"
+                src="us.jpeg"
+                alt=""
+                aria-hidden="true"
+                class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-45 scale-110 pointer-events-none select-none"
+                onerror="this.style.display='none'"
+              />
+              <!-- Main sharp couple photo -->
+              <img
+                id="couple-finale-photo"
+                src="us.jpeg"
+                alt="Us Forever"
+                class="relative z-10 w-full h-full object-contain rounded-xl drop-shadow-[0_0_24px_rgba(0,0,0,0.68)]"
+                onerror="this.style.display='none'; document.getElementById('couple-finale-bg').style.display='none'; var fb=document.getElementById('couple-finale-fallback'); fb.classList.remove('hidden'); fb.classList.add('flex');"
+              />
+              <!-- Graceful Neon Glass Fallback (Shown if us.jpeg isn't in the same folder yet) -->
+              <div
+                id="couple-finale-fallback"
+                class="hidden relative z-30 w-full h-full flex-col items-center justify-center text-center p-6 sm:p-8 bg-gradient-to-br from-[#190836]/92 via-[#0f0524]/92 to-[#210930]/92 backdrop-blur-md"
+              >
+                <div class="w-16 h-16 rounded-full bg-neonCyan/20 border border-neonCyan/55 flex items-center justify-center text-3xl mb-3 shadow-[0_0_26px_rgba(0,242,255,0.5)] heart-pulse">
+                  💍
+                </div>
+                <p class="text-base sm:text-lg font-bold text-white neon-text-cyan mb-1.5">
+                  Us Forever ❤️
+                </p>
+                <p class="text-xs sm:text-sm text-purple-200/85 max-w-sm leading-relaxed">
+                  Place <code class="px-2 py-0.5 rounded-md bg-neonPink/15 border border-neonPink/45 text-neonPink font-semibold">us.jpeg</code> in the same folder as this HTML file
+                </p>
+              </div>
+              <div class="absolute inset-0 z-20 pointer-events-none shadow-[inset_0_0_40px_rgba(255,42,133,0.35)]"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Love Level Meter -->
+        <div class="w-full max-w-md mx-auto mb-8 p-4 rounded-2xl bg-[#0d0522]/78 border border-neonPurple/45">
+          <div class="flex items-center justify-between text-xs sm:text-sm font-bold mb-2">
+            <span class="text-purple-200 tracking-wide uppercase">Love Level Meter</span>
+            <span id="love-meter-label" class="text-neonCyan neon-text-cyan">0%</span>
+          </div>
+          <div class="w-full h-4 rounded-full bg-white/10 overflow-hidden p-0.5">
+            <div id="love-bar" class="h-full w-0 rounded-full love-bar-fill"></div>
+          </div>
+        </div>
+
+        <!-- Interactive Send Infinite Love Button -->
+        <div class="flex flex-col items-center gap-3 w-full">
+          <button
+            id="infinite-love-btn"
+            type="button"
+            class="btn-neon-primary px-8 sm:px-10 py-4 rounded-full text-base sm:text-lg font-extrabold text-white tracking-wide cursor-pointer active:scale-95"
+          >
+            Send Infinite Love 💖
+          </button>
+
+          <p id="love-counter-text" class="text-xs sm:text-sm font-semibold text-neonGold/90 min-h-[20px]"></p>
+        </div>
+
+        <!-- Replay Surprise Button -->
+        <button
+          id="replay-btn"
+          type="button"
+          class="mt-8 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-purple-200/80 hover:text-white bg-white/5 hover:bg-white/12 border border-white/18 transition-colors cursor-pointer"
+        >
+          Replay Surprise 🔄
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       INTERACTIVE JAVASCRIPT ENGINE
+       ======================================================================= -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* =====================================================================
+         1. WEB AUDIO API CHIMES & SPARKLE SYNTHESIZER
+         ===================================================================== */
+      const SoundEngine = {
+        ctx: null,
+        muted: false,
+
+        ensureContext() {
+          try {
+            if (!this.ctx) {
+              const AudioCtx = window.AudioContext || window.webkitAudioContext;
+              if (AudioCtx) this.ctx = new AudioCtx();
+            }
+            if (this.ctx && this.ctx.state === 'suspended') {
+              this.ctx.resume();
+            }
+          } catch (err) {
+            // Gracefully ignore audio initialization errors
+          }
+        },
+
+        playTone(freq, duration = 0.22, type = 'sine', volume = 0.08, delay = 0) {
+          if (this.muted) return;
+          try {
+            this.ensureContext();
+            if (!this.ctx) return;
+
+            const now = this.ctx.currentTime + delay;
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, now);
+
+            gain.gain.setValueAtTime(0.0001, now);
+            gain.gain.exponentialRampToValueAtTime(volume, now + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+
+            osc.start(now);
+            osc.stop(now + duration + 0.02);
+          } catch (err) {
+            // Gracefully ignore playback errors
+          }
+        },
+
+        sparkleTap() {
+          const notes = [880, 1046.5, 1318.5, 1568];
+          const pick = notes[Math.floor(Math.random() * notes.length)];
+          this.playTone(pick, 0.16, 'sine', 0.045, 0);
+          this.playTone(pick * 1.25, 0.18, 'triangle', 0.03, 0.04);
+        },
+
+        magicalOpen() {
+          const chord = [523.25, 659.25, 783.99, 1046.5, 1318.5];
+          chord.forEach((f, i) => {
+            this.playTone(f, 0.38, 'triangle', 0.075, i * 0.07);
+          });
+        },
+
+        giftPop() {
+          this.playTone(440, 0.12, 'sine', 0.07, 0);
+          this.playTone(659.25, 0.18, 'triangle', 0.08, 0.06);
+          this.playTone(987.77, 0.28, 'sine', 0.08, 0.13);
+          this.playTone(1318.5, 0.35, 'triangle', 0.06, 0.2);
+        },
+
+        cuteNoBoing() {
+          this.playTone(420, 0.14, 'triangle', 0.07, 0);
+          this.playTone(320, 0.22, 'sine', 0.075, 0.08);
+        },
+
+        celebrationFanfare() {
+          const melody = [
+            { f: 523.25, d: 0.22, t: 0.0 },
+            { f: 659.25, d: 0.22, t: 0.1 },
+            { f: 783.99, d: 0.24, t: 0.2 },
+            { f: 1046.5, d: 0.45, t: 0.3 },
+            { f: 987.77, d: 0.2, t: 0.48 },
+            { f: 1046.5, d: 0.55, t: 0.6 },
+            { f: 1318.5, d: 0.65, t: 0.72 },
+          ];
+          melody.forEach((n) => this.playTone(n.f, n.d, 'triangle', 0.085, n.t));
+        },
+      };
+
+      const audioToggleBtn = document.getElementById('audio-toggle-btn');
+      const iconSoundOn = document.getElementById('icon-sound-on');
+      const iconSoundOff = document.getElementById('icon-sound-off');
+
+      audioToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        SoundEngine.muted = !SoundEngine.muted;
+        iconSoundOn.classList.toggle('hidden', SoundEngine.muted);
+        iconSoundOff.classList.toggle('hidden', !SoundEngine.muted);
+        if (!SoundEngine.muted) SoundEngine.sparkleTap();
+      });
+
+      /* =====================================================================
+         2. COSMIC STARFIELD & FLOATING NEON HEARTS CANVAS
+         ===================================================================== */
+      const bgCanvas = document.getElementById('bg-canvas');
+      const bgCtx = bgCanvas.getContext('2d');
+      const fxCanvas = document.getElementById('fx-canvas');
+      const fxCtx = fxCanvas.getContext('2d');
+
+      let bgW = 0;
+      let bgH = 0;
+      const stars = [];
+      const bgHearts = [];
+      const particles = [];
+      let celebrationActive = false;
+      let fireworkTimer = 0;
+
+      const NEON_COLORS = ['#ff2a85', '#00f2ff', '#a855f7', '#ffd166', '#ff66b3'];
+
+      function resizeCanvases() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        bgW = window.innerWidth;
+        bgH = window.innerHeight;
+
+        bgCanvas.width = Math.floor(bgW * dpr);
+        bgCanvas.height = Math.floor(bgH * dpr);
+        bgCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        fxCanvas.width = Math.floor(bgW * dpr);
+        fxCanvas.height = Math.floor(bgH * dpr);
+        fxCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        initBackgroundEntities();
+        positionNoButtonAtAngle(currentOrbitAngle);
+      }
+
+      function initBackgroundEntities() {
+        stars.length = 0;
+        bgHearts.length = 0;
+
+        const starCount = Math.min(95, Math.floor((bgW * bgH) / 13500));
+        for (let i = 0; i < starCount; i++) {
+          stars.push({
+            x: Math.random() * bgW,
+            y: Math.random() * bgH,
+            r: Math.random() * 1.7 + 0.5,
+            alpha: Math.random() * Math.PI * 2,
+            speed: Math.random() * 0.018 + 0.006,
+            color: Math.random() > 0.72 ? '#00f2ff' : Math.random() > 0.48 ? '#ffd166' : '#ffffff',
+          });
+        }
+
+        const heartCount = Math.min(22, Math.max(12, Math.floor(bgW / 70)));
+        for (let i = 0; i < heartCount; i++) {
+          bgHearts.push(createFloatingHeart(true));
+        }
+      }
+
+      function createFloatingHeart(randomY = false) {
+        return {
+          x: Math.random() * bgW,
+          y: randomY ? Math.random() * bgH : bgH + 30 + Math.random() * 60,
+          size: Math.random() * 10 + 7,
+          vy: Math.random() * 0.48 + 0.22,
+          swayAmp: Math.random() * 18 + 8,
+          swayFreq: Math.random() * 0.015 + 0.008,
+          phase: Math.random() * Math.PI * 2,
+          alpha: Math.random() * 0.36 + 0.14,
+          color: NEON_COLORS[Math.floor(Math.random() * NEON_COLORS.length)],
+        };
+      }
+
+      function drawHeartShape(ctx, x, y, size) {
+        ctx.beginPath();
+        const topCurveHeight = size * 0.3;
+        ctx.moveTo(x, y + topCurveHeight);
+        ctx.bezierCurveTo(x, y, x - size / 2, y, x - size / 2, y + topCurveHeight);
+        ctx.bezierCurveTo(
+          x - size / 2,
+          y + (size + topCurveHeight) / 2,
+          x,
+          y + (size + topCurveHeight) / 1.4,
+          x,
+          y + size
+        );
+        ctx.bezierCurveTo(
+          x,
+          y + (size + topCurveHeight) / 1.4,
+          x + size / 2,
+          y + (size + topCurveHeight) / 2,
+          x + size / 2,
+          y + topCurveHeight
+        );
+        ctx.bezierCurveTo(x + size / 2, y, x, y, x, y + topCurveHeight);
+        ctx.closePath();
+      }
+
+      function drawStarShape(ctx, x, y, r) {
+        ctx.beginPath();
+        for (let i = 0; i < 4; i++) {
+          const angle = (i * Math.PI) / 2;
+          ctx.lineTo(x + Math.cos(angle) * r * 1.9, y + Math.sin(angle) * r * 1.9);
+          ctx.lineTo(
+            x + Math.cos(angle + Math.PI / 4) * r * 0.55,
+            y + Math.sin(angle + Math.PI / 4) * r * 0.55
+          );
+        }
+        ctx.closePath();
+      }
+
+      /* =====================================================================
+         3. INTERACTIVE PARTICLE BURSTS, CONFETTI & NEON FIREWORKS
+         ===================================================================== */
+      function spawnBurst(x, y, count = 18, speedMult = 1, includeHearts = true) {
+        for (let i = 0; i < count; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = (Math.random() * 3.8 + 1.4) * speedMult;
+          const kindRoll = Math.random();
+          const kind = includeHearts && kindRoll < 0.42 ? 'heart' : kindRoll < 0.72 ? 'star' : 'dot';
+
+          particles.push({
+            x,
+            y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed - Math.random() * 1.2,
+            gravity: 0.065,
+            drag: 0.975,
+            size: kind === 'heart' ? Math.random() * 9 + 7 : Math.random() * 3.4 + 1.8,
+            life: 1,
+            decay: Math.random() * 0.016 + 0.012,
+            color: NEON_COLORS[Math.floor(Math.random() * NEON_COLORS.length)],
+            kind,
+          });
+        }
+      }
+
+      function spawnConfettiShower(count = 75) {
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: Math.random() * bgW,
+            y: -20 - Math.random() * 140,
+            vx: (Math.random() - 0.5) * 3.2,
+            vy: Math.random() * 3.5 + 2.2,
+            gravity: 0.045,
+            drag: 0.992,
+            size: Math.random() * 8 + 5,
+            life: 1,
+            decay: Math.random() * 0.007 + 0.005,
+            color: NEON_COLORS[Math.floor(Math.random() * NEON_COLORS.length)],
+            kind: Math.random() > 0.45 ? 'confetti' : 'heart',
+            rot: Math.random() * Math.PI * 2,
+            vRot: (Math.random() - 0.5) * 0.18,
+          });
+        }
+      }
+
+      function launchFirework(customX, customY) {
+        const fx = customX ?? (bgW * 0.14 + Math.random() * bgW * 0.72);
+        const fy = customY ?? (bgH * 0.14 + Math.random() * bgH * 0.44);
+        const palette = [
+          NEON_COLORS[Math.floor(Math.random() * NEON_COLORS.length)],
+          NEON_COLORS[Math.floor(Math.random() * NEON_COLORS.length)],
+          '#ffffff',
+        ];
+
+        const count = 44;
+        for (let i = 0; i < count; i++) {
+          const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.14;
+          const speed = Math.random() * 4.9 + 1.8;
+          particles.push({
+            x: fx,
+            y: fy,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            gravity: 0.052,
+            drag: 0.968,
+            size: Math.random() * 3.5 + 2,
+            life: 1,
+            decay: Math.random() * 0.013 + 0.01,
+            color: palette[i % palette.length],
+            kind: i % 5 === 0 ? 'heart' : 'dot',
+          });
+        }
+      }
+
+      function spawnRisingHeartFountain(count = 14) {
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: bgW * 0.15 + Math.random() * bgW * 0.7,
+            y: bgH + 10,
+            vx: (Math.random() - 0.5) * 1.8,
+            vy: -(Math.random() * 4.5 + 3.2),
+            gravity: -0.015,
+            drag: 0.99,
+            size: Math.random() * 12 + 10,
+            life: 1,
+            decay: 0.0085,
+            color: NEON_COLORS[Math.floor(Math.random() * NEON_COLORS.length)],
+            kind: 'heart',
+          });
+        }
+      }
+
+      /* Global Tap/Click Sparkle Burst */
+      window.addEventListener('pointerdown', (e) => {
+        spawnBurst(e.clientX, e.clientY, 14, 0.95, true);
+        if (!e.target.closest('button') && !e.target.closest('.gift-stage')) {
+          SoundEngine.sparkleTap();
+        }
+      });
+
+      /* Main Unified Animation Loop */
+      let animFrameTime = 0;
+      function animateLoop() {
+        animFrameTime += 1;
+
+        // 1. Background Stars & Floating Hearts
+        bgCtx.clearRect(0, 0, bgW, bgH);
+
+        for (let i = 0; i < stars.length; i++) {
+          const s = stars[i];
+          s.alpha += s.speed;
+          const twinkle = 0.25 + Math.abs(Math.sin(s.alpha)) * 0.75;
+          bgCtx.save();
+          bgCtx.globalAlpha = twinkle;
+          bgCtx.fillStyle = s.color;
+          bgCtx.shadowBlur = 8;
+          bgCtx.shadowColor = s.color;
+          bgCtx.beginPath();
+          bgCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          bgCtx.fill();
+          bgCtx.restore();
+        }
+
+        for (let i = 0; i < bgHearts.length; i++) {
+          const h = bgHearts[i];
+          h.y -= h.vy;
+          const drawX = h.x + Math.sin(animFrameTime * h.swayFreq + h.phase) * h.swayAmp;
+
+          if (h.y < -35) {
+            bgHearts[i] = createFloatingHeart(false);
+            continue;
+          }
+
+          bgCtx.save();
+          bgCtx.globalAlpha = h.alpha;
+          bgCtx.strokeStyle = h.color;
+          bgCtx.fillStyle = h.color;
+          bgCtx.lineWidth = 1.4;
+          bgCtx.shadowBlur = 12;
+          bgCtx.shadowColor = h.color;
+          drawHeartShape(bgCtx, drawX, h.y, h.size);
+          bgCtx.stroke();
+          bgCtx.globalAlpha = h.alpha * 0.28;
+          bgCtx.fill();
+          bgCtx.restore();
+        }
+
+        // 2. FX Particles, Confetti & Fireworks
+        fxCtx.clearRect(0, 0, bgW, bgH);
+
+        if (celebrationActive) {
+          fireworkTimer++;
+          if (fireworkTimer % 36 === 0) launchFirework();
+          if (fireworkTimer % 52 === 0) spawnRisingHeartFountain(5);
+        }
+
+        for (let i = particles.length - 1; i >= 0; i--) {
+          const p = particles[i];
+          p.vx *= p.drag;
+          p.vy = p.vy * p.drag + p.gravity;
+          p.x += p.vx;
+          p.y += p.vy;
+          p.life -= p.decay;
+
+          if (p.life <= 0) {
+            particles.splice(i, 1);
+            continue;
+          }
+
+          fxCtx.save();
+          fxCtx.globalAlpha = Math.max(0, p.life);
+          fxCtx.fillStyle = p.color;
+          fxCtx.shadowBlur = 12;
+          fxCtx.shadowColor = p.color;
+
+          if (p.kind === 'heart') {
+            drawHeartShape(fxCtx, p.x, p.y - p.size / 2, p.size);
+            fxCtx.fill();
+          } else if (p.kind === 'star') {
+            drawStarShape(fxCtx, p.x, p.y, p.size);
+            fxCtx.fill();
+          } else if (p.kind === 'confetti') {
+            p.rot = (p.rot || 0) + (p.vRot || 0.08);
+            fxCtx.translate(p.x, p.y);
+            fxCtx.rotate(p.rot);
+            fxCtx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+          } else {
+            fxCtx.beginPath();
+            fxCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            fxCtx.fill();
+          }
+          fxCtx.restore();
+        }
+
+        requestAnimationFrame(animateLoop);
+      }
+
+      /* =====================================================================
+         4. SECTION 1: OPENING CURTAIN PARTING TRANSITION
+         ===================================================================== */
+      const openingCurtain = document.getElementById('opening-curtain');
+      const openSurpriseBtn = document.getElementById('open-surprise-btn');
+      const mainExperience = document.getElementById('main-experience');
+
+      function revealMainSections() {
+        const blocks = mainExperience.querySelectorAll('.fade-up-enter');
+        blocks.forEach((el, idx) => {
+          setTimeout(() => el.classList.add('visible'), 150 + idx * 170);
+        });
+      }
+
+      openSurpriseBtn.addEventListener('click', () => {
+        SoundEngine.magicalOpen();
+        const rect = openSurpriseBtn.getBoundingClientRect();
+        spawnBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 44, 1.5, true);
+        spawnConfettiShower(78);
+
+        openingCurtain.classList.add('curtain-opening');
+        mainExperience.classList.remove('hidden');
+
+        requestAnimationFrame(() => {
+          mainExperience.classList.remove('opacity-0');
+          positionNoButtonAtAngle(currentOrbitAngle);
+          revealMainSections();
+        });
+
+        setTimeout(() => {
+          openingCurtain.classList.add('opacity-0', 'pointer-events-none');
+        }, 550);
+
+        setTimeout(() => {
+          openingCurtain.classList.add('hidden');
+        }, 1050);
+      });
+
+      /* =====================================================================
+         5. SECTION 3: TWO INTERACTIVE 3D-STYLED GIFT BOXES
+         ===================================================================== */
+      function setupGiftBox(closedId, revealId) {
+        const closedEl = document.getElementById(closedId);
+        const revealEl = document.getElementById(revealId);
+        let opened = false;
+
+        function openGift() {
+          if (opened) return;
+          opened = true;
+
+          SoundEngine.giftPop();
+          const rect = closedEl.getBoundingClientRect();
+          spawnBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 38, 1.38, true);
+          spawnConfettiShower(35);
+
+          closedEl.classList.add('gift-opened');
+
+          setTimeout(() => {
+            closedEl.classList.add('hidden');
+            revealEl.classList.remove('hidden');
+            revealEl.classList.add('flex', 'reveal-pop');
+          }, 420);
+        }
+
+        closedEl.addEventListener('click', openGift);
+        closedEl.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openGift();
+          }
+        });
+
+        return function resetGift() {
+          opened = false;
+          closedEl.classList.remove('hidden', 'gift-opened');
+          revealEl.classList.add('hidden');
+          revealEl.classList.remove('flex', 'reveal-pop');
+        };
+      }
+
+      const resetGift1 = setupGiftBox('gift-closed-1', 'gift-reveal-1');
+      const resetGift2 = setupGiftBox('gift-closed-2', 'gift-reveal-2');
+
+      /* =====================================================================
+         6. SECTION 4: CIRCULAR-ORBITING "NO" BUTTON PROPOSAL ARENA
+         ===================================================================== */
+      const proposalArena = document.getElementById('proposal-arena');
+      const orbitRing = document.getElementById('orbit-ring');
+      const yesBtn = document.getElementById('yes-btn');
+      const noBtn = document.getElementById('no-btn');
+      const noMessageBox = document.getElementById('no-message-box');
+
+      /* Exact requested Malayalam messages in cycle order */
+      const NO_MESSAGES = [
+        'plzz angane parayathe😭😭😭😭',
+        'Angane parayathe namal angane ano🙂💔',
+        'ponnehhhh😭💔yes para',
+      ];
+
+      let noClickCount = 0;
+      let currentOrbitAngle = Math.PI / 2; // Starts right below the Yes button
+      let currentSpinDeg = 0;
+
+      /**
+       * Calculates responsive circular orbit radii so the "No" button smoothly
+       * travels round and round around the arena without ever clipping off-screen.
+       */
+      function getOrbitMetrics() {
+        const arenaW = proposalArena.clientWidth || 320;
+        const arenaH = proposalArena.clientHeight || 300;
+        const noW = noBtn.offsetWidth || 94;
+        const noH = noBtn.offsetHeight || 48;
+
+        const maxRx = Math.max(76, arenaW / 2 - noW / 2 - 12);
+        const maxRy = Math.max(76, arenaH / 2 - noH / 2 - 12);
+
+        const circleR = Math.min(maxRx, maxRy);
+        return {
+          cx: arenaW / 2,
+          cy: arenaH / 2,
+          rx: Math.min(maxRx, Math.max(circleR, 96)),
+          ry: Math.min(maxRy, Math.max(circleR, 96)),
+        };
+      }
+
+      function positionNoButtonAtAngle(angleRad, spinDeg = currentSpinDeg) {
+        if (!proposalArena || proposalArena.clientWidth === 0) return;
+        const { cx, cy, rx, ry } = getOrbitMetrics();
+
+        orbitRing.style.width = `${rx * 2}px`;
+        orbitRing.style.height = `${ry * 2}px`;
+        orbitRing.style.left = `${cx - rx}px`;
+        orbitRing.style.top = `${cy - ry}px`;
+
+        const x = cx + rx * Math.cos(angleRad);
+        const y = cy + ry * Math.sin(angleRad);
+
+        noBtn.style.left = `${x}px`;
+        noBtn.style.top = `${y}px`;
+        noBtn.style.transform = `translate(-50%, -50%) rotate(${spinDeg}deg)`;
+      }
+
+      /**
+       * Smoothly advances the "No" button along a true circular arc with a playful
+       * 360-degree spin so it literally orbits round and round in a circle.
+       */
+      function orbitNoButtonSmoothly() {
+        const startAngle = currentOrbitAngle;
+        const deltaAngle = (Math.PI * 2) / 5 + 0.16; // ~81° advance each click
+        const targetAngle = startAngle + deltaAngle;
+
+        const startSpin = currentSpinDeg;
+        const targetSpin = startSpin + 360;
+
+        const duration = 480;
+        const startTime = performance.now();
+
+        function step(now) {
+          const elapsed = now - startTime;
+          const t = Math.min(1, elapsed / duration);
+          const ease = 1 - Math.pow(1 - t, 3);
+
+          const angleNow = startAngle + (targetAngle - startAngle) * ease;
+          const spinNow = startSpin + (targetSpin - startSpin) * ease;
+
+          currentOrbitAngle = angleNow;
+          currentSpinDeg = spinNow;
+          positionNoButtonAtAngle(angleNow, spinNow);
+
+          if (t < 1) requestAnimationFrame(step);
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      function spawnFloatingCryEmojis(clientX, clientY) {
+        const emojis = ['😭', '💔', '🥺', '😭'];
+        emojis.forEach((em, idx) => {
+          const span = document.createElement('span');
+          span.className = 'floating-emoji';
+          span.textContent = em;
+          const offsetX = (idx - 1.5) * 26 + (Math.random() - 0.5) * 14;
+          span.style.left = `${clientX + offsetX}px`;
+          span.style.top = `${clientY - 8}px`;
+          span.style.setProperty('--drift', `${(Math.random() - 0.5) * 55}px`);
+          document.body.appendChild(span);
+          setTimeout(() => span.remove(), 1550);
+        });
+      }
+
+      noBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        noClickCount += 1;
+
+        SoundEngine.cuteNoBoing();
+
+        orbitRing.classList.remove('opacity-0');
+        orbitRing.classList.add('opacity-100');
+
+        const rect = noBtn.getBoundingClientRect();
+        spawnFloatingCryEmojis(rect.left + rect.width / 2, rect.top + rect.height / 2);
+
+        const msg = NO_MESSAGES[(noClickCount - 1) % NO_MESSAGES.length];
+        noMessageBox.textContent = msg;
+        noMessageBox.classList.remove('hidden', 'shake-cute');
+        void noMessageBox.offsetWidth;
+        noMessageBox.classList.add('shake-cute');
+
+        orbitNoButtonSmoothly();
+
+        // Grow Yes! button slightly bigger & glow brighter on each No click
+        const newScale = Math.min(1.42, 1 + noClickCount * 0.085);
+        yesBtn.style.transform = `scale(${newScale.toFixed(3)})`;
+        const glowRadius = Math.min(62, 26 + noClickCount * 7);
+        yesBtn.style.boxShadow = `0 0 ${glowRadius}px rgba(255, 42, 133, 0.92), 0 0 ${glowRadius + 24}px rgba(0, 242, 255, 0.48)`;
+      });
+
+      /* =====================================================================
+         7. SECTION 5: GRAND FIREWORKS CELEBRATION FINALE
+         ===================================================================== */
+      const celebrationFinale = document.getElementById('celebration-finale');
+      const loveBar = document.getElementById('love-bar');
+      const loveMeterLabel = document.getElementById('love-meter-label');
+      const infiniteLoveBtn = document.getElementById('infinite-love-btn');
+      const loveCounterText = document.getElementById('love-counter-text');
+      const replayBtn = document.getElementById('replay-btn');
+
+      let loveTapCount = 0;
+      let loveMeterInterval = null;
+
+      function animateLoveMeter() {
+        clearInterval(loveMeterInterval);
+        loveBar.style.width = '0%';
+        loveMeterLabel.textContent = '0%';
+
+        let pct = 0;
+        requestAnimationFrame(() => {
+          loveBar.style.width = '100%';
+        });
+
+        loveMeterInterval = setInterval(() => {
+          pct += 4;
+          if (pct < 100) {
+            loveMeterLabel.textContent = `${pct}%`;
+          } else {
+            clearInterval(loveMeterInterval);
+            loveMeterLabel.textContent = '∞% Forever Locked 💖';
+          }
+        }, 72);
+      }
+
+      yesBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        SoundEngine.celebrationFanfare();
+
+        celebrationActive = true;
+        fireworkTimer = 0;
+
+        spawnConfettiShower(115);
+        spawnRisingHeartFountain(24);
+        launchFirework(bgW * 0.24, bgH * 0.28);
+        setTimeout(() => launchFirework(bgW * 0.76, bgH * 0.26), 220);
+        setTimeout(() => launchFirework(bgW * 0.5, bgH * 0.2), 450);
+
+        mainExperience.classList.add('opacity-0');
+        setTimeout(() => {
+          mainExperience.classList.add('hidden');
+          celebrationFinale.classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+
+          requestAnimationFrame(() => {
+            celebrationFinale.classList.remove('opacity-0');
+            animateLoveMeter();
+          });
+        }, 480);
+      });
+
+      infiniteLoveBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        loveTapCount += 1;
+
+        SoundEngine.magicalOpen();
+        const rect = infiniteLoveBtn.getBoundingClientRect();
+        spawnBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 36, 1.48, true);
+        launchFirework(bgW * 0.22 + Math.random() * bgW * 0.56, bgH * 0.16 + Math.random() * bgH * 0.34);
+        spawnRisingHeartFountain(14);
+
+        const lovePhrases = [
+          'Infinite love sent to Kunji penneee! 💖✨',
+          'Overflowing with neon love! 🎆❤️',
+          'Forever locked in my heart! 💍💫',
+          'Endless kisses & hugs sent! 🥰💖',
+        ];
+        loveCounterText.textContent = `${lovePhrases[(loveTapCount - 1) % lovePhrases.length]} (×${loveTapCount})`;
+      });
+
+      /* =====================================================================
+         8. REPLAY SURPRISE RESET
+         ===================================================================== */
+      replayBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        SoundEngine.sparkleTap();
+
+        celebrationActive = false;
+        clearInterval(loveMeterInterval);
+        loveTapCount = 0;
+        loveCounterText.textContent = '';
+
+        resetGift1();
+        resetGift2();
+
+        noClickCount = 0;
+        currentOrbitAngle = Math.PI / 2;
+        currentSpinDeg = 0;
+        noMessageBox.classList.add('hidden');
+        noMessageBox.textContent = '';
+        orbitRing.classList.add('opacity-0');
+        orbitRing.classList.remove('opacity-100');
+        yesBtn.style.transform = 'scale(1)';
+        yesBtn.style.boxShadow = '';
+
+        celebrationFinale.classList.add('opacity-0');
+        setTimeout(() => {
+          celebrationFinale.classList.add('hidden');
+          openingCurtain.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+          window.scrollTo({ top: 0, behavior: 'instant' });
+
+          requestAnimationFrame(() => {
+            openingCurtain.classList.remove('curtain-opening');
+          });
+        }, 480);
+      });
+
+      /* =====================================================================
+         9. INITIALIZE ON WINDOW LOAD & RESIZE
+         ===================================================================== */
+      window.addEventListener('resize', resizeCanvases);
+      window.addEventListener('load', () => {
+        resizeCanvases();
+        animateLoop();
+      });
+    })();
+  </script>
+</body>
+</html>
